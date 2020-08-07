@@ -1,2 +1,3 @@
 # Todo app
-Todo js with vanilla JS-
+
+Todo app with vanilla JS.
