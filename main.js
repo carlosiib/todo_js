@@ -24,7 +24,7 @@ function agregarTodo(e) {
 
   //Creadno btn terminado
   const btnTerminado = document.createElement("button")
-  btnTerminado.innerText = "Terminado"
+  btnTerminado.innerText = "Completado"
   btnTerminado.classList.add("btn-success", "btn", "btn-md", "mr-2")
   //Adding the btn to the div
   todoDiv.appendChild(btnTerminado)
@@ -54,3 +54,12 @@ function deleteCheck(e) {
   }
 }
 
+function completedCheck(e) {
+  const item = e.target
+  if (item.classList[0] !== "btn-danger") {
+    //GETTING THE TEXT VALUE
+    const todoText = item.parentElement.firstElementChild
+    todoText.innerText = "COMPLETADO"
+
+  }
+}
