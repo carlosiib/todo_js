@@ -22,6 +22,9 @@ function agregarTodo(e) {
   //agregando newTodo dentro de todoDiv
   todoDiv.appendChild(newTodo)
 
+  //add todo to localstorage
+  saveLocalTodos(inputTodo.value)
+
   //Creadno btn terminado
   const btnTerminado = document.createElement("button")
   btnTerminado.innerText = "Completado"
@@ -62,4 +65,18 @@ function completedCheck(e) {
     todoText.innerText = "COMPLETADO"
 
   }
+}
+
+function saveLocalTodos(todo) {
+  //check if local storage has something
+  let todos;
+  if (localStorage.getItem("todos") === null) {
+    todos = []
+  } else {
+    todos = JSON.parse(localStorage.getItem("todos"))
+  }
+  todos.push(todo)
+
+  localStorage.setItem("todos", JSON.stringify(todos))
+
 }
